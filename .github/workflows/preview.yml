@@ -1,0 +1,31 @@
+name: preview
+on:
+  push:
+    branches:
+      - "master"
+    tags-ignore:
+      - "**"
+
+jobs:
+  preview:
+    name: preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build documents
+        uses: ./.github/actions/latex-ci
+      - name: deploy to preview branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview
+          publish_branch: preview
+          keep_files: true
+          commit_message: "preview:"
+      - name: post status to discord
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          job: deploy paper preview

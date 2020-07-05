@@ -1,0 +1,6 @@
+name: "latex ci"
+description: "build latex documents"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"

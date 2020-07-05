@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# LaTeX
+*.aux
+*.dvi
+*.log
+*.pdf
+*.xbb
+
+# what
+*~
+
+# preview directory
+/preview

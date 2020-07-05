@@ -1,0 +1,52 @@
+\documentclass[a4paper, twocolumn]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{setspace}
+\usepackage[top=20mm,bottom=20mm,left=23mm,right=23mm]{geometry}
+\makeatletter
+\def\section{\@startsection{section}{1}{\z@}%
+ {.1\Cvs \@plus.1\Cdp \@minus.1\Cdp}%
+ {.1\Cvs \@plus.1\Cdp}%
+ {\normalfont\normalsize\bfseries}}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\def\subsection{\@startsection{subsection}{1}{\z@}%
+ {.1\Cvs \@plus.1\Cdp \@minus.1\Cdp}%
+ {.1\Cvs \@plus.1\Cdp}%
+ {\normalfont\normalsize\bfseries}}
+
+\def\@maketitle {
+	\begin{center}
+		\fontsize{14pt}{0pt}\selectfont
+                {\bf \@title{}}
+	\end{center}
+	\vspace{1pt}
+	\begin{flushleft}
+		\@author{}
+		\hfill{Sarisia}
+	\end{flushleft}
+\vspace{0.3cm}
+}
+
+\renewcommand{\baselinestretch}{0.95}
+
+\pagestyle{empty}
+\makeatother
+
+\begin{document}
+\title{作業にも CI にも使える TeXLive 環境を整える}
+\date{}
+\maketitle
+\thispagestyle{empty} 
+
+\section{やりました}
+なるほどね。
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=7cm]{thinking.png}
+\caption{Thinking Aria}
+\label{figure1}
+\end{center}
+\end{figure}
+
+\end{document}
